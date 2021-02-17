@@ -74,9 +74,6 @@ class Analyzer:
 			color = self.color(maskHSV)
 			list.append(Shape(color,approx))
 		return list	
-			
-
-
 
 analizer =Analyzer()	
 image = cv2.imread('figurasColores2.png')
