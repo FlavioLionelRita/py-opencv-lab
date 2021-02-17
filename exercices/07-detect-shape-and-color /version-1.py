@@ -55,14 +55,9 @@ class Analyzer:
 
 	def findContours(self,img):
 		gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-		# cv2.imshow('gray',gray)
 		canny = cv2.Canny(gray, 10,150)
-		# cv2.imshow('canny',canny)
 		canny = cv2.dilate(canny,None,iterations=1)
-		# cv2.imshow('dilate',canny)
 		canny = cv2.erode(canny,None,iterations=1)
-		# cv2.imshow('erode',canny)
-		#_,cnts,_ = cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) #OpenCV 3
 		cnts,_ = cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) #OpenCV 4
 		return cnts
 
