@@ -70,13 +70,16 @@ class Analyzer:
 			epsilon = 0.01*cv2.arcLength(c,True)
 			approx = cv2.approxPolyDP(c,epsilon,True)
 			imAux = cv2.drawContours(imZeros, [c], -1, 255, -1)
+			# cv2.imshow('imAux',imAux)
 			maskHSV = cv2.bitwise_and(imageHSV,imageHSV, mask=imAux)
+			# cv2.imshow('maskHSV',maskHSV)
 			color = self.color(maskHSV)
 			list.append(Shape(color,approx))
 		return list	
 
 analizer =Analyzer()	
 image = cv2.imread('figurasColores2.png')
+#image = cv2.imread('2.jpg')
 shapes=analizer.shapes(image)
 for s in shapes:
 	cv2.putText(image,s.label(),(s.x,s.y-5),1,0.8,(0,255,0),1)
