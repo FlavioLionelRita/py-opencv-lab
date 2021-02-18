@@ -83,7 +83,7 @@ class Recognition :
         self.createDescriptor(path,'neg')         
 
 recognition = Recognition() 
-path=os.getcwd()+'/target'
+path=os.getcwd()+'/data'
 # cap=cv2.VideoCapture(0)
 # recognition.capture(cap,path)
 # cap.release()
