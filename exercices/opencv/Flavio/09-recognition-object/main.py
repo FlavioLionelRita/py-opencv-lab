@@ -1,10 +1,11 @@
 import cv2
 import imutils
+from os import path
+
+_path = path.dirname(path.abspath(__file__))
 
 
-
-
-cap = cv2.VideoCapture('/home/flavio/develop/py-opencv-lab/docs/data/captures/house_to_school.mp4')
+cap = cv2.VideoCapture('house_to_school.mp4')
 cap.set(cv2.CAP_PROP_POS_FRAMES, 30*60*4)
 
 plateCascades = cv2.CascadeClassifier('./haarcascades/haarcascade_russian_plate_number.xml')
