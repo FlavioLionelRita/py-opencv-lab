@@ -39,7 +39,7 @@ while True:
 
             epsilon = 0.01*cv2.arcLength(hull2,True)
             approx = cv2.approxPolyDP(hull2,epsilon,True)
-            # print(approx)
+            # print(approx)ii
 
             for p in approx:
                 cv2.circle(ROI,(p[0][0],p[0][1]),5,color_punto,-1)
@@ -73,8 +73,7 @@ while True:
             # cv2.imshow('gray',gray)
             
         cv2.imshow('ROI',ROI)
-        cv2.imshow('frame',frame)
-        
+        cv2.imshow('frame',frame)        
         k = cv2.waitKey(20)	
         if k == ord('i'):
             bg = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
